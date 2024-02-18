@@ -20,7 +20,7 @@ def main():
     spacy_tags, stanza_tags = Token.align_pos_tags(
         pos_tagging_spacy(text), pos_tagging_stanza(text)
     )
-    manual_tags = load_manual("annotation_manuelle.csv")
+    manual_tags = load_manual("aux/annotation_manuelle.csv")
     spacy_tokens = Token.construct_tokens(spacy_tags, manual_tags)
     stanza_tokens = Token.construct_tokens(stanza_tags, manual_tags)
     evaluation.compare_models(spacy_tokens, stanza_tokens)
